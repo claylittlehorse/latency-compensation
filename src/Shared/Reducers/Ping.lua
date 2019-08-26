@@ -5,7 +5,7 @@ local Rodux = import "Rodux"
 local SetPing = import "Actions/SetPing"
 
 return Rodux.createReducer(0, {
-	[SetPing.Name] = function(state, action)
+	[SetPing.name] = function(state, action)
 		return action.ping
 	end
 })
