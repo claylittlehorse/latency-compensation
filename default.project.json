@@ -24,7 +24,7 @@
       },
 
       "ImportPaths": {
-        "$path": "ImportPaths.lua"
+        "$path": "src/ImportPaths.lua"
       },
       "ReloadDirectories": {
         "$path": "src/ReloadDirectories.lua"
