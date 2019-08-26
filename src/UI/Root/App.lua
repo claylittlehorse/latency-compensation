@@ -7,6 +7,8 @@ local import = require(game.ReplicatedStorage.Lib.Import)
 local Roact = import "Roact"
 local RoactRodux = import "RoactRodux"
 
+local PingDisplay = import "Components/PingDisplay"
+
 local LayoutProvider = import "../LayoutProvider"
 -- local LanguageProvider = import "../LanguageProvider"
 
@@ -17,6 +19,7 @@ local function App(store)
 		}, {
 			LayoutProvider = Roact.createElement(LayoutProvider),
 			-- LanguageProvider = Roact.createElement(LanguageProvider),
+			PingDisplay = Roact.createElement(PingDisplay)
 		})
 	})
 end
