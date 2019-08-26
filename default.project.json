@@ -1,0 +1,34 @@
+{
+  "name": "twomoons",
+  "tree": {
+		"$className": "DataModel",
+
+    "HttpService": {
+      "$className": "HttpService",
+      "$properties": {
+        "HttpEnabled": true
+      }
+    },
+
+   "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+
+      "UI": {
+        "$path": "src/UI"
+      },
+      "Shared": {
+        "$path": "src/Shared"
+      },
+      "Lib": {
+        "$path": "lib"
+      },
+
+      "ImportPaths": {
+        "$path": "ImportPaths.lua"
+      },
+      "ReloadDirectories": {
+        "$path": "src/ReloadDirectories.lua"
+      }
+  	}
+  }
+}

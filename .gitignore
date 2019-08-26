@@ -1,0 +1,4 @@
+*.DS_Store
+
+# This is where you can store custom configuration settings for the game.
+src/Shared/Data/DevSettingsLocal.lua
