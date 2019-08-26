@@ -9,6 +9,7 @@ local Store = import "State/Store"
 local loadOrder = {
 	"../Systems/Commands",
 	"../Systems/TestRunner",
+	"../Systems/ServerPing"
 }
 
 for _, path in ipairs(loadOrder) do

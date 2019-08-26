@@ -21,6 +21,7 @@ end
 local loadOrder = {
 	"../Systems/ClientCommands",
 	"../Systems/UI",
+	"../Systems/ClientPing"
 }
 
 for _, path in ipairs(loadOrder) do

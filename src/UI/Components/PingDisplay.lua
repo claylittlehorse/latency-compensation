@@ -10,7 +10,7 @@ local function PingDisplay(props)
 		AnchorPoint = Vector2.new(0.5, 0.5),
 		Size = UDim2.new(0, 40, 0, 40),
 
-		FontSize = 12,
+		TextSize = 12,
 		Text = tostring(ping),
 	})
 end
