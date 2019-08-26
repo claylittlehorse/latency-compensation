@@ -6,20 +6,10 @@ local middlewares = {
 	Rodux.thunkMiddleware,
 }
 
-local reducers = {
-	import "Reducers/Ping"
-}
+local reducers = Rodux.combineReducers({
+	Ping = import "Reducers/Ping"
+})
 
-local rootReducer do
-	if #reducers == 0 then
-		rootReducer = function()
-			return {}
-		end
-	else
-		rootReducer = Rodux.combineReducers(reducers)
-	end
-end
-
-local store = Rodux.Store.new(rootReducer, nil, middlewares)
+local store = Rodux.Store.new(reducers, nil, middlewares)
 
 return store
