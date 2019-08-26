@@ -7,7 +7,7 @@ local middlewares = {
 }
 
 local reducers = {
-	-- import "Reducers/CoolReducer"
+	import "Reducers/Ping"
 }
 
 local rootReducer do
