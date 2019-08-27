@@ -14,7 +14,7 @@ local function App(store)
 		Roact.createElement("ScreenGui", {
 			ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 		}, {
-			PingGraph = Roact.createElement(PingGraph)
+			-- PingGraph = Roact.createElement(PingGraph)
 		})
 	})
 end
