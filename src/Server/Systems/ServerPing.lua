@@ -8,8 +8,9 @@ local ServerPing = {}
 function ServerPing.start()
 	Network.createEvent(PingEvents.PING_CLIENT)
 
-	Network.hookEvent(PingEvents.PING_SERVER, function(player)
-		Network.fireClient(PingEvents.PING_CLIENT, player, tick())
+	Network.hookEvent(PingEvents.PING_SERVER, function(player, clientSentTime)
+		local serverRecievedTime = tick()
+		Network.fireClient(PingEvents.PING_CLIENT, player, serverRecievedTime, clientSentTime)
 	end)
 end
 
