@@ -3,7 +3,6 @@ local import = require(game.ReplicatedStorage.Lib.Import)
 local Rodux = import "Rodux"
 local Cryo = import "Cryo"
 
-local SetPing = import "Actions/SetPing"
 local AddPing = import "Actions/AddPing"
 
 local initialState = {
@@ -21,29 +20,6 @@ local function truncateAdd(list, maxLength, value)
 end
 
 return Rodux.createReducer(initialState, {
-	-- [SetPing.name] = function(state, action)
-	-- 	local ping = action.ping
-
-	-- 	pings[#pings+1] = ping
-
-	-- 	if #pings > 1000 then
-	-- 		table.remove(pings, 1)
-	-- 	end
-
-	-- 	local total = 0
-	-- 	for i = 1, #pings do
-	-- 		total = total + pings[i]
-	-- 	end
-
-	-- 	local average = math.floor(total / #pings)
-
-	-- 	return {
-	-- 		current = ping,
-	-- 		highest = state.highest > ping and state.highest or ping,
-	-- 		lowest = state.lowest < ping and state.lowest or ping,
-	-- 		average = average,
-	-- 	}
-	-- end
 	[AddPing.name] = function(state, action)
 		local totalPing = action.totalPing
 		local sendPing = action.sendPing
