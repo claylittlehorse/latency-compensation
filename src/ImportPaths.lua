@@ -22,6 +22,7 @@ return {
 
 	-- Important libraries
 	Cmdr = "ReplicatedStorage/Lib/Cmdr",
+	Cryo = "ReplicatedStorage/Lib/Cryo",
 	DataStore2 = "ReplicatedStorage/Lib/DataStore2",
 	Immutable = "ReplicatedStorage/Lib/Immutable",
 	Inspect = "ReplicatedStorage/Lib/Inspect",
