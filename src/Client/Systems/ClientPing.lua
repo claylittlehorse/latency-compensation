@@ -18,6 +18,19 @@ local togglePauseAction = function(_, inputState, input)
 	end
 end
 
+local function round(number, increment)
+	return math.floor(number/increment + 0.5) * increment
+end
+
+local function makeStwing(values)
+	local valstr = "{x: %s, y:%s}, "
+	local str = ""
+	for _, v in ipairs(values) do
+		str = str..valstr:format(tostring(round(v.x, 0.001)), tostring(round(v.y, 0.001)))
+	end
+	return str
+end
+
 function ClientPing.start()
 	local startTime = tick()
 	Network.hookEvent(PingEvents.PING_CLIENT, function(serverRecievedTime, clientSentTime)
@@ -34,10 +47,16 @@ function ClientPing.start()
 		end
 	end)
 
-	ContextActionService:BindAction("Pause", togglePauseAction, false, Enum.KeyCode.P)
-	-- while wait(0.2) do
-	-- 	Network.fireServer(PingEvents.PING_SERVER, tick())
-	-- end
+	-- ContextActionService:BindAction("Pause", togglePauseAction, false, Enum.KeyCode.P)
+
+	wait(5)
+	togglePauseAction()
+
+	local state = Store:getState()
+	local pingValues = makeStwing(state.Ping.pings)
+	Network.fireServer(PingEvents.PASTE, pingValues)
+	print("----------------|| PING ||----------------")
+	print(pingValues)
 end
 
 return ClientPing
