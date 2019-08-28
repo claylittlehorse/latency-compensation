@@ -27,8 +27,8 @@ return Rodux.createReducer(initialState, {
 		local sendTime = action.sendTime
 
 		local newPings = truncateAdd(state.pings, 300, Vector2.new(sendTime, totalPing))
-		local newSendPings = truncateAdd(state.pings, 300, Vector2.new(sendTime, sendPing))
-		local newRecievePings = truncateAdd(state.pings, 300, Vector2.new(sendTime, recievePing))
+		local newSendPings = truncateAdd(state.sendPings, 300, Vector2.new(sendTime, sendPing))
+		local newRecievePings = truncateAdd(state.recievePings, 300, Vector2.new(sendTime, recievePing))
 
 		return {
 			pings = newPings,
